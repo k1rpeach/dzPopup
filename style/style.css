@@ -1,0 +1,220 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --dark-purple: #1d2039;
+  --light-purple: #475189;
+  --lighter-purple: #797e9a;
+  --green: #24a65b;
+  --orange: orange;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--dark-purple);
+}
+
+.card {
+  background-color: var(--light-purple);
+  border-radius: 20px;
+  padding: 5px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+header img {
+  width: 70px;
+}
+
+header h1 {
+  color: white;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+header #user {
+  color: var(--lighter-purple);
+  font-weight: bold;
+}
+
+section {
+  margin-top: 10px;
+
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap-reverse;
+}
+
+.gameTable {
+  flex-basis: 350px;
+  flex-grow: 1000;
+  flex-shrink: 0;
+
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 5px;
+}
+
+.gameTable .line {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.gameBtn {
+  width: 50px;
+  height: 50px;
+  background-image: url(../images/mine_block.png);
+  background-size: cover;
+}
+
+.gameText {
+  color: var(--lighter-purple);
+  font-weight: bold;
+}
+
+.choise {
+  flex-basis: 300px;
+  flex-grow: 1;
+}
+
+.choise h2 {
+  color: white;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 18px;
+}
+
+.scores {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+
+  margin-top: 10px;
+}
+
+.bet {
+  background-color: var(--dark-purple);
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 26px;
+  border-radius: 18px;
+  color: white;
+  padding: 5px;
+
+  flex-basis: 100px;
+  flex-grow: 1;
+
+  cursor: pointer;
+}
+
+.play {
+  margin-top: 10px;
+  display: block;
+  width: 100%;
+  height: 30px;
+  background-color: var(--green);
+  border: 0;
+  border-radius: 15px;
+
+  text-transform: uppercase;
+  color: white;
+  font-weight: bold;
+
+  transition: 100ms;
+  cursor: pointer;
+}
+
+.play:hover,
+.bet:hover {
+  opacity: 0.9;
+}
+
+.play:active,
+.bet:active {
+  transform: scale(0.9);
+}
+
+.selected {
+  background-color: var(--orange);
+}
+
+.gameBtn.active {
+  background-image: url(../images/mine_block_active.png);
+  background-size: cover;
+  cursor: pointer;
+}
+
+.gameBtn.skeleton {
+  background-image: url(../images/death_block.png);
+}
+
+.gameBtn.diamond {
+  background-image: url(../images/diamond_block.png);
+}
+
+.play[disabled] {
+  opacity: 0.4;
+}
+.play[disabled]:active {
+  transform: none;
+}
+.gameBtn.step {
+  box-shadow: rgba(73, 254, 53, 0.2) 0px 0px 3px 6px;
+}
+#popUp {
+  display: none;
+}
+#popUp.active {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--dark-purple);
+  border: 3px solid rgb(226, 147, 0);
+  border-radius: 10px;
+  width: 200px;
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  padding: 5px;
+}
+
+#popUp div:nth-child(1){
+  color: rgb(226, 147, 0);
+  font-weight: 700;
+  font-size: 20px;
+}
+#popUp div:nth-child(2){
+  color: white;
+  font-weight: 750;
+  font-size: 17px;
+}
+#popUp div:nth-child(3){
+  color: rgb(0, 212, 0);
+  font-weight: 700;
+  font-size: 14px;
+}
+#popUp div:nth-child(2) span{
+  color: rgb(226, 147, 0);
+  font-size: 12px;
+}
+#popUp div:nth-child(3) span{
+  color: white;
+  font-size: 14px;
+}
+
+
+
